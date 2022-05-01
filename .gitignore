@@ -11,6 +11,14 @@
 # production
 /build
 
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+
 # misc
 .DS_Store
 .env.local
