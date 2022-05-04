@@ -54,7 +54,7 @@ class Game extends React.Component {
                 </div>
             </div>
             <Timeline value ={this.state.timeline} handler={this.setStateSquares} />
-            <PlayerWon value={this.state.winner} />
+            <PlayerWon value={this.state.winner} handler={this.resetGame}/>
         </div>;
     }
 
@@ -67,6 +67,14 @@ class Game extends React.Component {
             this.setState({nextPlayer: timeline_get_user(this.state.timeline[counter])});
             this.setState({winner: null});
         }
+    }
+
+    //handling reset of the game
+    resetGame = () =>{
+        this.setState({squares: Array(9).fill(null)});
+        this.setState({timeline: []});
+        this.setState({nextPlayer: 'X'});
+        this.setState({winner: null});
     }
 
     // updating the state of NextPlayer
